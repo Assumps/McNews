@@ -1,5 +1,5 @@
 import { NewsService } from "../services/newsService";
-import { Request,Response } from "express";
+import { Request,Response} from "express";
 
 class NewsController {
     private _service: NewsService
@@ -17,8 +17,8 @@ class NewsController {
             let result = await this._service.getAll(page,qtd);
             response.status(200).json({result});
 
-        } catch (er) {
-            response.status(500).json({error: er.message || er.toString()});
+        } catch (error: any) {
+            response.status(500).json({error: error.message || error.toString()});
         }
     }
 
@@ -29,7 +29,7 @@ class NewsController {
 
             response.status(200).json({result});
 
-        } catch (error) {
+        } catch (error: any) {
             response.status(500).json({error: error.message || error.toString()});
         }
     }
