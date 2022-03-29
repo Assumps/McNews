@@ -7,7 +7,7 @@ export class NewsService implements INewsService {
 
     async get(_id: string): Promise<News>{
         let result = await NewsRepository.findById(_id);
-        return result;
+        return <News>result;
     }
 
     async getAll(page: number, qtd: number): Promise<Result<News>> {

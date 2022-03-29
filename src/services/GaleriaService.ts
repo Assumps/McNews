@@ -7,7 +7,7 @@ export class GaleriaService implements IGaleriaService {
 
     async get(_id: string): Promise<Galeria> {
         let result = await GaleriaRepository.findById(_id);
-        return result;
+        return <Galeria>result;
     }
 
     async getAll(page: number, qtd: number): Promise<Result<Galeria>> {

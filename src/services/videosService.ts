@@ -7,7 +7,7 @@ export class VideosService implements iVideosService {
 
     async get(_id: string): Promise<Videos>{
         let result = await VideosRepository.findById(_id);
-        return result;
+        return <Videos>result;
     }
 
     async getAll(page: number, qtd: number): Promise<Result<Videos>> {
